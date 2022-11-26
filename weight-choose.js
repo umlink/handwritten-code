@@ -1,0 +1,23 @@
+/*
+请实现抽奖函数rand，保证随机性
+输入为表示对象数组，对象有属性n表示人名，w表示权重
+随机返回一个中奖人名，中奖概率和w成正比
+*/
+let peoples = [
+  { n: 'p1', w: 100 },
+  { n: 'p2', w: 200 },
+  { n: 'p3', w: 300 },
+  { n: 'p4', w: 100 },
+]
+let rand = function (p) {
+  const total = p.reduce((prev, curr) => {
+    curr.min = prev === 0 ? 0 : prev + 1
+    curr.max = prev + curr.w
+     return prev + curr.w
+  }, 0)
+  const random = Math.round(Math.random() * total)
+  console.log(p)
+  const ret = p.filter(item => random >= item.min && random <= item.max)[0]
+  return ret
+}
+console.log(rand(peoples))
