@@ -3,33 +3,35 @@
 */
 
 function childNum(num, count){
-  let allplayer = [];    
+  let allplayer = [];
   for(let i = 0; i < num; i++){
       allplayer[i] = i + 1;
   }
-  
+
+  console.log(allplayer)
+
   let exitCount = 0;    // 离开人数
   let counter = 0;      // 记录报数
   let curIndex = 0;     // 当前下标
-  
+
   while(exitCount < num - 1){
-      if(allplayer[curIndex] !== 0) counter++;    
-      
-      if(counter == count){
-          allplayer[curIndex] = 0;                 
+      if(allplayer[curIndex] !== 0) counter++;
+
+      if(counter === count){
+          allplayer[curIndex] = 0;
           counter = 0;
-          exitCount++;  
+          exitCount++;
       }
       curIndex++;
-      if(curIndex == num){
-          curIndex = 0               
-      };           
-  }    
+      if(curIndex === num){
+          curIndex = 0
+      }
+  }
   for(i = 0; i < num; i++){
       if(allplayer[i] !== 0){
           return allplayer[i]
           break
-      }      
+      }
   }
 }
 console.log(childNum(30, 3))
@@ -57,7 +59,7 @@ const childGetNum = (max, count) => {
       nextNum: i === max ? 1 : i + 1
     })
   }
-  
+
   let num = 1
   let current = list[0]
 
@@ -84,3 +86,19 @@ const childGetNum = (max, count) => {
 }
 
 // childGetNum(30, 3)
+
+function josephRing(n, m) {
+  if (n <= 1 || m < 1) {
+    console.log("you can't play Joseph's game. n must be bigger than 1, m must be bigger than 0")
+    return
+  }
+
+  let r = 0
+  for (let i = 2; i <= n; i++) {
+    //会先计算 n = 2 时的结果，最终得到的 r 就是胜利者
+    r = (r + m) % i
+  }
+  console.log(r + 1 + ' is the winner.')
+}
+
+// console.log(josephRing(30, 3))
