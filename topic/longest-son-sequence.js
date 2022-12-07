@@ -4,7 +4,6 @@
  */
 
 const nums = [10, 9, 2, 5, 3, 1, 7, 101, 18, 6]
-
 /**
  * 动态规划取最长
  */
@@ -20,13 +19,14 @@ const getShotChildList = (nums) => {
       }
     }
   }
+  console.log(dep)
   return Math.max(...dep)
 }
 
 console.log(getShotChildList(nums))
 
 /**
- * 贪心 + 二分查找 
+ * 贪心 + 二分查找
  */
 
 const getShotChildList2 = (nums) => {
