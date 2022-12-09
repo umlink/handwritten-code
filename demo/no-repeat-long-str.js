@@ -63,7 +63,6 @@ const noRepeatStr = (str) => {
   const strLen = str.length
   while (currentIndex < strLen) {
     const tempStr = str.substr(currentIndex, strLen)
-    console.log('------------', currentIndex, tempStr)
     for (let i = 0; i < tempStr.length; i++) {
       if (currentMaxStr.indexOf(tempStr[i]) === -1) {
         currentMaxStr += tempStr[i]

@@ -7,7 +7,7 @@ const mul = (m, n, k) => {
     let count = (start - 1) * n
     for (let i = start; i <= m; i++) {
       count += (mid / i) | 0
-      console.log(count, start, k)
+      console.log(count, start)
     }
     if (count >= k) {
       right = mid

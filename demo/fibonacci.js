@@ -1,6 +1,7 @@
 /**
  * 输出前n个斐波那契数
- * 
+ * 1 1 2 3 5 8 13
+ *
 */
 
 const fibonacci = (n) => {
@@ -51,15 +52,15 @@ const outputFb = (n) => {
   let prev = 1
   let next = 1
   let indexCounter = 0
-  while (indexCounter <= n) {
+  while (indexCounter < n) {
     if (indexCounter < 2) {
       console.log(1)
     } else {
       [prev, next] = [next, prev + next]
+      console.log(next)
     }
     indexCounter++
   }
-  return 
 }
 
-outputFb(next)
+outputFb(10)

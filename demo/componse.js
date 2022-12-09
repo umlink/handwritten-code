@@ -2,7 +2,7 @@
  * 倒叙输出
  * prev(next())。。。
  * fn1(fn2(fn3(fn4(x))))
- * 
+ *
 */
 
 const compose = (...fn) => {
@@ -16,10 +16,11 @@ const compose = (...fn) => {
 }
 
 function fn1(x) {
-  return x + 1;
   console.log(1)
+  return x + 1;
 }
 function fn2(x) {
+  console.log(2)
   return x + 2;
 }
 function fn3(x) {

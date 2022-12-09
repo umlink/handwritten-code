@@ -1,3 +1,4 @@
+// 数字累加
 const add = (...args) => {
   let allArgs = args
   const sum = function (...args2) {

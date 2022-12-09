@@ -5,7 +5,7 @@ const maxDepth = (arr) => {
     arr = [].concat(...arr)
     dep++
   }
-  return
+  return arr
 }
 
 console.log(maxDepth([1, [2, [3, [4]]]]))
